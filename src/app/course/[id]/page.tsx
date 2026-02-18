@@ -11,6 +11,10 @@ import { MOCK_ENROLLMENTS } from '@/lib/data/mock';
 import { formatTimeRemaining } from '@/lib/utils/format';
 import { cn } from '@/lib/utils/cn';
 
+export function generateStaticParams() {
+    return MOCK_ENROLLMENTS.map((e) => ({ id: e.course_id }));
+}
+
 interface Props {
     params: { id: string };
 }

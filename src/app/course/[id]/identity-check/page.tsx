@@ -6,6 +6,11 @@ import { Shield, AlertTriangle, CheckCircle, ArrowRight, RotateCcw, Lock } from 
 import { Button } from '@/components/ui/Button';
 import { Card } from '@/components/ui/Card';
 import { cn } from '@/lib/utils/cn';
+import { MOCK_ENROLLMENTS } from '@/lib/data/mock';
+
+export function generateStaticParams() {
+    return MOCK_ENROLLMENTS.map((e) => ({ id: e.course_id }));
+}
 
 interface Props {
     params: { id: string };
